@@ -17,7 +17,6 @@
 		888F8F3716F01755003FE32C /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 888F8F3616F01755003FE32C /* Default@2x.png */; };
 		888F8F3916F01755003FE32C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 888F8F3816F01755003FE32C /* Default-568h@2x.png */; };
 		888F8F3C16F01755003FE32C /* AKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 888F8F3B16F01755003FE32C /* AKViewController.m */; };
-		888F8F3F16F01755003FE32C /* AKViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 888F8F3D16F01755003FE32C /* AKViewController.xib */; };
 		888F8F4716F01755003FE32C /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 888F8F4616F01755003FE32C /* SenTestingKit.framework */; };
 		888F8F4816F01755003FE32C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 888F8F2216F01755003FE32C /* UIKit.framework */; };
 		888F8F4916F01755003FE32C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 888F8F2416F01755003FE32C /* Foundation.framework */; };
@@ -55,7 +54,6 @@
 		888F8F3816F01755003FE32C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		888F8F3A16F01755003FE32C /* AKViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AKViewController.h; sourceTree = "<group>"; };
 		888F8F3B16F01755003FE32C /* AKViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AKViewController.m; sourceTree = "<group>"; };
-		888F8F3E16F01755003FE32C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/AKViewController.xib; sourceTree = "<group>"; };
 		888F8F4516F01755003FE32C /* AuthKit-ExampleTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AuthKit-ExampleTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		888F8F4616F01755003FE32C /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		888F8F4E16F01755003FE32C /* AuthKit-ExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AuthKit-ExampleTests-Info.plist"; sourceTree = "<group>"; };
@@ -133,7 +131,6 @@
 				888F8F3216F01755003FE32C /* AKAppDelegate.m */,
 				888F8F3A16F01755003FE32C /* AKViewController.h */,
 				888F8F3B16F01755003FE32C /* AKViewController.m */,
-				888F8F3D16F01755003FE32C /* AKViewController.xib */,
 				888F8F2916F01755003FE32C /* Supporting Files */,
 			);
 			path = "AuthKit-Example";
@@ -250,7 +247,6 @@
 				888F8F3516F01755003FE32C /* Default.png in Resources */,
 				888F8F3716F01755003FE32C /* Default@2x.png in Resources */,
 				888F8F3916F01755003FE32C /* Default-568h@2x.png in Resources */,
-				888F8F3F16F01755003FE32C /* AKViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,14 +340,6 @@
 				888F8F2C16F01755003FE32C /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		888F8F3D16F01755003FE32C /* AKViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				888F8F3E16F01755003FE32C /* en */,
-			);
-			name = AKViewController.xib;
 			sourceTree = "<group>";
 		};
 		888F8F4F16F01755003FE32C /* InfoPlist.strings */ = {
