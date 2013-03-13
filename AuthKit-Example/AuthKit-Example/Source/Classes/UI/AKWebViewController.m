@@ -2,18 +2,23 @@
 
 #import <CocoaLumberjack/DDLog.h>
 
+#import "AKOAuth2AuthorizationCodeConsumer.h"
+
 static const int ddLogLevel = LOG_LEVEL_INFO;
 
 @interface AKWebViewController ()<UIWebViewDelegate>
+@property(nonatomic, weak) id<AKOAuth2AuthorizationCodeConsumer> authorizationCodeConsumer;
 @property(nonatomic, strong) NSURL *webViewURL;
 @property(nonatomic, strong, readonly) UIWebView *webView;
 @end
 
 @implementation AKWebViewController
 
-- (id)initWithWebViewURL:(NSURL *)webViewURL {
+- (id)initWithWebViewURL:(NSURL *)webViewURL
+    andAuthorizationCodeConsumer:(id<AKOAuth2AuthorizationCodeConsumer>)consumer{
   self = [super init];
   if (self) {
+    self.authorizationCodeConsumer = consumer;
     self.webViewURL = webViewURL;
   }
   return self;
@@ -63,7 +68,9 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
         [queryParameters[0] componentsSeparatedByString:@"="];
     DDLogInfo(@"AKWebViewController: Authorization Code, %@",
                  authorizationCodeParameter[1]);
-    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    [self.authorizationCodeConsumer retriever:self
+                 didRetrieveAuthorizationCode:authorizationCodeParameter[1]];
     return NO;
   }
   return YES;

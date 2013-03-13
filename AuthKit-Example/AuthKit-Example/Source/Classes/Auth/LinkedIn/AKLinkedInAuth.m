@@ -6,11 +6,16 @@
 #import "AKAppDelegate.h"
 #import "AKAuthenticationHandler.h"
 #import "AKWebViewController.h"
+#import "AKOAuth2AuthorizationCodeConsumer.h"
 
 typedef void (^AFOAuth2AuthenticationSuccess)(AFOAuthCredential *credential);
 typedef void (^AFOAuth2AuthenticationFailure)(NSError *error);
 
 static const int ddLogLevel = LOG_LEVEL_VERBOSE;
+
+@interface AKLinkedInAuth ()<AKOAuth2AuthorizationCodeConsumer>
+@property(nonatomic, strong) AKWebViewController *webViewController;
+@end
 
 @implementation AKLinkedInAuth
 
@@ -42,42 +47,19 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
   NSURL *authorizationCodeRequestURL =
       [NSURL URLWithString:authorizationCodeRequestURLString];
   
-  AKWebViewController *webViewController =
-      [[AKWebViewController alloc] initWithWebViewURL:authorizationCodeRequestURL];
-  webViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+  self.webViewController =
+      [[AKWebViewController alloc] initWithWebViewURL:authorizationCodeRequestURL
+                         andAuthorizationCodeConsumer:self];
+  self.webViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
   AKAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
-  [appDelegate.window.rootViewController presentViewController:webViewController
+  [appDelegate.window.rootViewController presentViewController:self.webViewController
                                                       animated:YES
                                                     completion:nil];
   
-  /*
   
-  NSURL *linkedInAuthServerBaseURL =
-      [NSURL URLWithString:@"https://www.linkedin.com/"];
-  AFOAuth2Client *linkedInOAuth2Client =
-      [AFOAuth2Client clientWithBaseURL:linkedInAuthServerBaseURL
-                               clientID:@"hrsfw0wa1l0x"
-                                 secret:@"qbQ3Tr8zHe0vK8ot"];
-  AKLinkedInAuth __weak *weakSelf = self;
-  AFOAuth2AuthenticationSuccess authenticationSuccess = ^(AFOAuthCredential *credential){
-    [weakSelf.authenticationHandler userDidLogin:weakSelf];
-  };
-  AFOAuth2AuthenticationFailure authenticationFailure = ^(NSError *error){
-    DDLogError(@"AKLinkedInAuth: Failure authenticating, %@",
-               [error localizedDescription]);
-  };
-  NSDictionary *authorizationCodeRedirectParameters =
-      @{@"response_type": @"code",
-        @"client_id" : @"hrsfw0wa1l0x",
-        @"scope" : @"r_basicprofile",
-        @"state" : @"DCEEFWF45453sdffef",
-        @"redirect_uri" : @"http://www.apple.com"};
   
-  [linkedInOAuth2Client authenticateUsingOAuthWithPath:@"/uas/oauth2/authorization"
-                                            parameters:authorizationCodeRedirectParameters
-                                               success:authenticationSuccess
-                                               failure:authenticationFailure];
-   */
+  
+   
 }
 
 - (void)closeSession {
@@ -86,6 +68,48 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 - (BOOL)sessionIsOpen {
   
+}
+
+#pragma mark AKOAuth2AuthorizationCodeConsumer 
+
+- (void)retriever:(id)retriever didRetrieveAuthorizationCode:(NSString *)authorizationCode {
+  DDLogVerbose(@"AKLinkedInAuth: GOT AUTH CODE");
+  
+  NSURL *linkedInAuthServerBaseURL =
+      [NSURL URLWithString:@"https://www.linkedin.com/"];
+  AFOAuth2Client *linkedInOAuth2Client =
+      [AFOAuth2Client clientWithBaseURL:linkedInAuthServerBaseURL
+                               clientID:@"5se92tdnfz61"
+                                 secret:@"GneNrlqv99QIZTTq"];
+  AKLinkedInAuth __weak *weakSelf = self;
+  AFOAuth2AuthenticationSuccess authenticationSuccess = ^(AFOAuthCredential *credential){
+    DDLogVerbose(@"AKLinkedInAuth: Logged In to LinkedIn, %@", credential);
+    [weakSelf.authenticationHandler userDidLogin:weakSelf];
+  };
+  AFOAuth2AuthenticationFailure authenticationFailure = ^(NSError *error){
+    DDLogError(@"AKLinkedInAuth: Failure authenticating, %@",
+               [error localizedDescription]);
+  };
+//  NSDictionary *authorizationCodeRedirectParameters =
+//      @{@"response_type": @"code",
+//        @"client_id" : @"hrsfw0wa1l0x",
+//        @"scope" : @"r_basicprofile",
+//        @"state" : @"DCEEFWF45453sdffef",
+//        @"redirect_uri" : @"http://www.apple.com"};
+  
+//  [linkedInOAuth2Client authenticateUsingOAuthWithPath:@"/uas/oauth2/authorization"
+//                                            parameters:authorizationCodeRedirectParameters
+//                                               success:authenticationSuccess
+//                                               failure:authenticationFailure];
+  
+  [linkedInOAuth2Client authenticateUsingOAuthWithPath:@"/uas/oauth2/accessToken"
+                                                  code:authorizationCode
+                                           redirectURI:@"http://www.theiosengineer.com"
+                                               success:authenticationSuccess
+                                               failure:authenticationFailure];
+  
+  
+  [self.webViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

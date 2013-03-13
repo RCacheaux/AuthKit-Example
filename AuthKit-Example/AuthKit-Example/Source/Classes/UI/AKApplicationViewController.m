@@ -2,6 +2,7 @@
 
 #import "AKAuthenticatedViewController.h"
 #import "AKFacebookAuth.h"
+#import "AKLinkedInAuth.h"
 #import "AKLoginViewController.h"
 
 @interface AKApplicationViewController ()
@@ -15,6 +16,7 @@
   self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
   if (self) {
     [AKFacebookAuth sharedFacebookAuth].authenticationHandler = self;
+    [AKLinkedInAuth sharedLinkedInAuth].authenticationHandler = self;
   }
   return self;
 }

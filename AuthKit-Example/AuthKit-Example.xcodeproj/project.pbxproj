@@ -76,6 +76,7 @@
 		888F8F5016F01755003FE32C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		888F8F5216F01755003FE32C /* AuthKit_ExampleTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthKit_ExampleTests.h; sourceTree = "<group>"; };
 		888F8F5316F01755003FE32C /* AuthKit_ExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthKit_ExampleTests.m; sourceTree = "<group>"; };
+		9FB16FCA16F1195A00676FC8 /* AKOAuth2AuthorizationCodeConsumer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AKOAuth2AuthorizationCodeConsumer.h; sourceTree = "<group>"; };
 		C158E89995EE432C9EF69CB6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB7E2BFAB0344C1E80BCB947 /* libPods-AuthKit-ExampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AuthKit-ExampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -145,6 +146,7 @@
 		8850DFB716F036C9003B70EC /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				9FB16FC916F1192E00676FC8 /* OAuth2 */,
 				8850DFB816F036C9003B70EC /* Facebook */,
 				8850DFBD16F0423C003B70EC /* LinkedIn */,
 			);
@@ -242,6 +244,14 @@
 				888F8F4F16F01755003FE32C /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9FB16FC916F1192E00676FC8 /* OAuth2 */ = {
+			isa = PBXGroup;
+			children = (
+				9FB16FCA16F1195A00676FC8 /* AKOAuth2AuthorizationCodeConsumer.h */,
+			);
+			path = OAuth2;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -170,6 +170,8 @@ static NSMutableDictionary * AFKeychainQueryDictionaryWithIdentifier(NSString *i
 
     NSMutableURLRequest *mutableRequest = [self requestWithMethod:@"POST" path:path parameters:parameters];
     [mutableRequest setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+  
+  NSLog(@"Rene: OAuth POST Request, %@, %@", mutableRequest, parameters);
 
     AFHTTPRequestOperation *authOperation = [self HTTPRequestOperationWithRequest:mutableRequest success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if ([responseObject valueForKey:@"error"]) {
