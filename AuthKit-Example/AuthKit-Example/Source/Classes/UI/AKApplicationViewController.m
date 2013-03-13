@@ -81,14 +81,14 @@
 
 #pragma mark AKAuthenticationHander
 
-- (void)applicationDidLogin:(id)sender {
+- (void)userDidLogin:(id)sender {
   [UIView animateWithDuration:0.4 animations:^{
     [self unloadLoginView];
     [self loadAuthenticatedView];
   }];
 }
 
-- (void)applicationDidLogout:(id)sender {
+- (void)userDidLogout:(id)sender {
   [UIView animateWithDuration:0.4 animations:^{
     [self unloadAuthenticatedView];
     [self loadLoginView];

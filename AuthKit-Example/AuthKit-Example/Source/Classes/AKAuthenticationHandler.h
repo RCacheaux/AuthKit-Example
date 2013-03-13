@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
 @protocol AKAuthenticationHandler
-- (void)applicationDidLogin:(id)sender;
-- (void)applicationDidLogout:(id)sender;
+- (void)userDidLogin:(id)sender;
+- (void)userDidLogout:(id)sender;
 @end

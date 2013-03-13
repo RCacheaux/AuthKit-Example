@@ -59,13 +59,13 @@ static const int ddLogLevel = LOG_LEVEL_ERROR;
   switch (state) {
     case FBSessionStateOpen:
       DDLogVerbose(@"AKLoginViewController: Facebook session state open hide login.");
-      [self.authenticationHandler applicationDidLogin:self];
+      [self.authenticationHandler userDidLogin:self];
       break;
       
     case FBSessionStateClosed:
     case FBSessionStateClosedLoginFailed:
       [FBSession.activeSession closeAndClearTokenInformation];
-      [self.authenticationHandler applicationDidLogout:self];
+      [self.authenticationHandler userDidLogout:self];
       break;
       
     default:
