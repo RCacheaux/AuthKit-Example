@@ -12,6 +12,7 @@
 		8850DFAF16F02110003B70EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8850DFAC16F02110003B70EC /* main.m */; };
 		8850DFB216F02141003B70EC /* AKAuthenticatedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8850DFB116F02141003B70EC /* AKAuthenticatedViewController.m */; };
 		8850DFB516F02311003B70EC /* AKApplicationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8850DFB416F02311003B70EC /* AKApplicationViewController.m */; };
+		8850DFBB16F036F1003B70EC /* AKFacebookAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 8850DFBA16F036F1003B70EC /* AKFacebookAuth.m */; };
 		888F8F2316F01755003FE32C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 888F8F2216F01755003FE32C /* UIKit.framework */; };
 		888F8F2516F01755003FE32C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 888F8F2416F01755003FE32C /* Foundation.framework */; };
 		888F8F2716F01755003FE32C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 888F8F2616F01755003FE32C /* CoreGraphics.framework */; };
@@ -50,6 +51,9 @@
 		8850DFB116F02141003B70EC /* AKAuthenticatedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKAuthenticatedViewController.m; sourceTree = "<group>"; };
 		8850DFB316F02311003B70EC /* AKApplicationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKApplicationViewController.h; sourceTree = "<group>"; };
 		8850DFB416F02311003B70EC /* AKApplicationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKApplicationViewController.m; sourceTree = "<group>"; };
+		8850DFB616F02D87003B70EC /* AKAuthenticationHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AKAuthenticationHandler.h; sourceTree = "<group>"; };
+		8850DFB916F036F1003B70EC /* AKFacebookAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKFacebookAuth.h; sourceTree = "<group>"; };
+		8850DFBA16F036F1003B70EC /* AKFacebookAuth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKFacebookAuth.m; sourceTree = "<group>"; };
 		888F8F1F16F01755003FE32C /* AuthKit-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AuthKit-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		888F8F2216F01755003FE32C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		888F8F2416F01755003FE32C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -110,6 +114,8 @@
 			children = (
 				8850DFA716F02110003B70EC /* AKAppDelegate.h */,
 				8850DFA816F02110003B70EC /* AKAppDelegate.m */,
+				8850DFB616F02D87003B70EC /* AKAuthenticationHandler.h */,
+				8850DFB716F036C9003B70EC /* Auth */,
 				8850DFA916F02110003B70EC /* UI */,
 			);
 			path = Classes;
@@ -126,6 +132,23 @@
 				8850DFB116F02141003B70EC /* AKAuthenticatedViewController.m */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		8850DFB716F036C9003B70EC /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				8850DFB816F036C9003B70EC /* Facebook */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		8850DFB816F036C9003B70EC /* Facebook */ = {
+			isa = PBXGroup;
+			children = (
+				8850DFB916F036F1003B70EC /* AKFacebookAuth.h */,
+				8850DFBA16F036F1003B70EC /* AKFacebookAuth.m */,
+			);
+			path = Facebook;
 			sourceTree = "<group>";
 		};
 		888F8F1616F01755003FE32C = {
@@ -348,6 +371,7 @@
 				8850DFAF16F02110003B70EC /* main.m in Sources */,
 				8850DFB216F02141003B70EC /* AKAuthenticatedViewController.m in Sources */,
 				8850DFB516F02311003B70EC /* AKApplicationViewController.m in Sources */,
+				8850DFBB16F036F1003B70EC /* AKFacebookAuth.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

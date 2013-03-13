@@ -1,13 +1,16 @@
 
 PODS:
+- CocoaLumberjack (1.6)
 - Facebook-iOS-SDK (3.2.0)
 - OCMock (2.0.1)
 
 DEPENDENCIES:
+- CocoaLumberjack (>= 1.6)
 - Facebook-iOS-SDK (>= 3.2.0)
 - OCMock (>= 2.0.1)
 
 SPEC CHECKSUMS:
+  CocoaLumberjack: 0f2fa7090a23f13261072d882e017c688300efbe
   Facebook-iOS-SDK: a9893c9ad7cf2ce35cb6297e2859eaee654bd6b0
   OCMock: 77a9c4c57af6bf258a537d34cf09abf422affede
 

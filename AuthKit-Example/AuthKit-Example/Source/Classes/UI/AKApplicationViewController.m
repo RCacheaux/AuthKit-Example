@@ -1,8 +1,7 @@
 #import "AKApplicationViewController.h"
 
-#import <FacebookSDK/FacebookSDK.h>
-
 #import "AKAuthenticatedViewController.h"
+#import "AKFacebookAuth.h"
 #import "AKLoginViewController.h"
 
 @interface AKApplicationViewController ()
@@ -15,7 +14,7 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
   self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
   if (self) {
-      // Custom initialization
+    [AKFacebookAuth sharedFacebookAuth].authenticationHandler = self;
   }
   return self;
 }
@@ -39,14 +38,15 @@
 
 - (void)loadScreenIdentifier {
   UILabel *screenIdentifier =
-      [[UILabel alloc] initWithFrame:CGRectMake(100.0f, 100.0f, 200.0f, 30.0f)];
+      [[UILabel alloc] initWithFrame:CGRectMake(130.0f, 100.0f, 200.0f, 30.0f)];
   screenIdentifier.text = @"APPLICATION";
   screenIdentifier.backgroundColor = [UIColor clearColor];
   [self.view addSubview:screenIdentifier];
 }
 
 - (void)loadRootChildViewController {
-  if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
+  if ([[AKFacebookAuth sharedFacebookAuth] sessionIsOpen]) {
+    [[AKFacebookAuth sharedFacebookAuth] openSession];
     [self loadAuthenticatedView];
   } else {
     [self loadLoginView];
@@ -76,6 +76,23 @@
 - (void)viewWillLayoutSubviews {
   [super viewWillLayoutSubviews];
   self.loginViewController.view.frame = self.view.bounds;
+  self.authenticatedViewController.view.frame = self.view.bounds;
+}
+
+#pragma mark AKAuthenticationHander
+
+- (void)applicationDidLogin:(id)sender {
+  [UIView animateWithDuration:0.4 animations:^{
+    [self unloadLoginView];
+    [self loadAuthenticatedView];
+  }];
+}
+
+- (void)applicationDidLogout:(id)sender {
+  [UIView animateWithDuration:0.4 animations:^{
+    [self unloadAuthenticatedView];
+    [self loadLoginView];
+  }];
 }
 
 - (void)didReceiveMemoryWarning {

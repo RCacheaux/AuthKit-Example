@@ -1,5 +1,7 @@
 #import "AKAuthenticatedViewController.h"
 
+#import "AKFacebookAuth.h"
+
 @interface AKAuthenticatedViewController ()
 
 @end
@@ -21,11 +23,30 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-	UILabel *screenIdentifier =
-      [[UILabel alloc] initWithFrame:CGRectMake(100.0f, 100.0f, 200.0f, 30.0f)];
+  [self loadScreenIdentifier];
+	[self loadLogoutButton];
+}
+
+- (void)loadScreenIdentifier {
+  UILabel *screenIdentifier =
+      [[UILabel alloc] initWithFrame:CGRectMake(90.0f, 100.0f, 200.0f, 30.0f)];
   screenIdentifier.text = @"AUTHENTICATED";
   screenIdentifier.backgroundColor = [UIColor clearColor];
   [self.view addSubview:screenIdentifier];
+}
+
+- (void)loadLogoutButton {
+  UIButton *logoutButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+  [logoutButton addTarget:self
+                   action:@selector(logout:)
+         forControlEvents:UIControlEventTouchUpInside];
+  [logoutButton setTitle:@"Logout" forState:UIControlStateNormal];
+  logoutButton.frame = CGRectMake(60.0f, 400.0f, 200.0f, 50.0f);
+  [self.view addSubview:logoutButton];
+}
+
+- (void)logout:(id)sender {
+  [[AKFacebookAuth sharedFacebookAuth] closeSession];
 }
 
 - (void)didReceiveMemoryWarning {

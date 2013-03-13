@@ -1,6 +1,7 @@
 platform :ios, '6.1'
 
 pod 'Facebook-iOS-SDK', '>=3.2.0'
+pod 'CocoaLumberjack', '>=1.6'
 
 target :'AuthKit-ExampleTests', :exclusive => true do
   pod 'OCMock', '>= 2.0.1'

@@ -1,5 +1,7 @@
 #import <UIKit/UIKit.h>
 
-@interface AKApplicationViewController : UIViewController
+#import "AKAuthenticationHandler.h"
+
+@interface AKApplicationViewController : UIViewController <AKAuthenticationHandler>
 
 @end
