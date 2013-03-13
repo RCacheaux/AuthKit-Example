@@ -1,15 +1,22 @@
 
 PODS:
+- AFNetworking (1.1.0)
+- AFOAuth2Client (0.1.0):
+  - AFNetworking (~> 1.0)
 - CocoaLumberjack (1.6)
 - Facebook-iOS-SDK (3.2.0)
 - OCMock (2.0.1)
 
 DEPENDENCIES:
+- AFNetworking (>= 1.1.0)
+- AFOAuth2Client (>= 0.1.0)
 - CocoaLumberjack (>= 1.6)
 - Facebook-iOS-SDK (>= 3.2.0)
 - OCMock (>= 2.0.1)
 
 SPEC CHECKSUMS:
+  AFNetworking: 761a418233d280c1e0580bcb76ff9cb4c3073d17
+  AFOAuth2Client: 2d1a21039fcc086254b0564428677fbbee0a4972
   CocoaLumberjack: 0f2fa7090a23f13261072d882e017c688300efbe
   Facebook-iOS-SDK: a9893c9ad7cf2ce35cb6297e2859eaee654bd6b0
   OCMock: 77a9c4c57af6bf258a537d34cf09abf422affede
