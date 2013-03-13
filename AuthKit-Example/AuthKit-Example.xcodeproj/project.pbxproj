@@ -11,6 +11,7 @@
 		8850DFAE16F02110003B70EC /* AKLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8850DFAB16F02110003B70EC /* AKLoginViewController.m */; };
 		8850DFAF16F02110003B70EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8850DFAC16F02110003B70EC /* main.m */; };
 		8850DFB216F02141003B70EC /* AKAuthenticatedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8850DFB116F02141003B70EC /* AKAuthenticatedViewController.m */; };
+		8850DFB516F02311003B70EC /* AKApplicationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8850DFB416F02311003B70EC /* AKApplicationViewController.m */; };
 		888F8F2316F01755003FE32C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 888F8F2216F01755003FE32C /* UIKit.framework */; };
 		888F8F2516F01755003FE32C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 888F8F2416F01755003FE32C /* Foundation.framework */; };
 		888F8F2716F01755003FE32C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 888F8F2616F01755003FE32C /* CoreGraphics.framework */; };
@@ -47,6 +48,8 @@
 		8850DFAC16F02110003B70EC /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8850DFB016F02141003B70EC /* AKAuthenticatedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKAuthenticatedViewController.h; sourceTree = "<group>"; };
 		8850DFB116F02141003B70EC /* AKAuthenticatedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKAuthenticatedViewController.m; sourceTree = "<group>"; };
+		8850DFB316F02311003B70EC /* AKApplicationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKApplicationViewController.h; sourceTree = "<group>"; };
+		8850DFB416F02311003B70EC /* AKApplicationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKApplicationViewController.m; sourceTree = "<group>"; };
 		888F8F1F16F01755003FE32C /* AuthKit-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AuthKit-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		888F8F2216F01755003FE32C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		888F8F2416F01755003FE32C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -115,6 +118,8 @@
 		8850DFA916F02110003B70EC /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				8850DFB316F02311003B70EC /* AKApplicationViewController.h */,
+				8850DFB416F02311003B70EC /* AKApplicationViewController.m */,
 				8850DFAA16F02110003B70EC /* AKLoginViewController.h */,
 				8850DFAB16F02110003B70EC /* AKLoginViewController.m */,
 				8850DFB016F02141003B70EC /* AKAuthenticatedViewController.h */,
@@ -342,6 +347,7 @@
 				8850DFAE16F02110003B70EC /* AKLoginViewController.m in Sources */,
 				8850DFAF16F02110003B70EC /* main.m in Sources */,
 				8850DFB216F02141003B70EC /* AKAuthenticatedViewController.m in Sources */,
+				8850DFB516F02311003B70EC /* AKApplicationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
