@@ -1,10 +1,10 @@
-#import "AKViewController.h"
+#import "AKLoginViewController.h"
 
-@interface AKViewController ()
+@interface AKLoginViewController ()
 
 @end
 
-@implementation AKViewController
+@implementation AKLoginViewController
 
 - (void)loadView {
   self.view = [[UIView alloc] init];
