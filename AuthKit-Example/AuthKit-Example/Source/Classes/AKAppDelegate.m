@@ -1,22 +1,16 @@
-//
-//  AKAppDelegate.m
-//  AuthKit-Example
-//
-//  Created by Rene Cacheaux on 3/12/13.
-//  Copyright (c) 2013 RCach Apps. All rights reserved.
-//
-
 #import "AKAppDelegate.h"
 
+#import "AKAuthenticatedViewController.h"
 #import "AKLoginViewController.h"
 
 @implementation AKAppDelegate
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-  self.viewController = [[AKLoginViewController alloc] initWithNibName:@"AKViewController" bundle:nil];
+- (BOOL)application:(UIApplication *)application
+    didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+  self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+  // Override point for customization after application launch.
+  self.viewController =
+      [[AKAuthenticatedViewController alloc] initWithNibName:nil bundle:nil];
   self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;
