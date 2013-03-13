@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8850DFAD16F02110003B70EC /* AKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8850DFA816F02110003B70EC /* AKAppDelegate.m */; };
+		8850DFAE16F02110003B70EC /* AKLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8850DFAB16F02110003B70EC /* AKLoginViewController.m */; };
+		8850DFAF16F02110003B70EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8850DFAC16F02110003B70EC /* main.m */; };
 		888F8F2316F01755003FE32C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 888F8F2216F01755003FE32C /* UIKit.framework */; };
 		888F8F2516F01755003FE32C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 888F8F2416F01755003FE32C /* Foundation.framework */; };
 		888F8F2716F01755003FE32C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 888F8F2616F01755003FE32C /* CoreGraphics.framework */; };
 		888F8F2D16F01755003FE32C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 888F8F2B16F01755003FE32C /* InfoPlist.strings */; };
-		888F8F2F16F01755003FE32C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 888F8F2E16F01755003FE32C /* main.m */; };
-		888F8F3316F01755003FE32C /* AKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 888F8F3216F01755003FE32C /* AKAppDelegate.m */; };
 		888F8F3516F01755003FE32C /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 888F8F3416F01755003FE32C /* Default.png */; };
 		888F8F3716F01755003FE32C /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 888F8F3616F01755003FE32C /* Default@2x.png */; };
 		888F8F3916F01755003FE32C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 888F8F3816F01755003FE32C /* Default-568h@2x.png */; };
-		888F8F3C16F01755003FE32C /* AKLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 888F8F3B16F01755003FE32C /* AKLoginViewController.m */; };
 		888F8F4716F01755003FE32C /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 888F8F4616F01755003FE32C /* SenTestingKit.framework */; };
 		888F8F4816F01755003FE32C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 888F8F2216F01755003FE32C /* UIKit.framework */; };
 		888F8F4916F01755003FE32C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 888F8F2416F01755003FE32C /* Foundation.framework */; };
@@ -39,21 +39,21 @@
 /* Begin PBXFileReference section */
 		1E9610579FDB4606B5E39100 /* Pods-AuthKit-ExampleTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuthKit-ExampleTests.xcconfig"; path = "Pods/Pods-AuthKit-ExampleTests.xcconfig"; sourceTree = SOURCE_ROOT; };
 		239D353398314934A3C709AF /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		8850DFA716F02110003B70EC /* AKAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKAppDelegate.h; sourceTree = "<group>"; };
+		8850DFA816F02110003B70EC /* AKAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKAppDelegate.m; sourceTree = "<group>"; };
+		8850DFAA16F02110003B70EC /* AKLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKLoginViewController.h; sourceTree = "<group>"; };
+		8850DFAB16F02110003B70EC /* AKLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKLoginViewController.m; sourceTree = "<group>"; };
+		8850DFAC16F02110003B70EC /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		888F8F1F16F01755003FE32C /* AuthKit-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AuthKit-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		888F8F2216F01755003FE32C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		888F8F2416F01755003FE32C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		888F8F2616F01755003FE32C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		888F8F2A16F01755003FE32C /* AuthKit-Example-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AuthKit-Example-Info.plist"; sourceTree = "<group>"; };
 		888F8F2C16F01755003FE32C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		888F8F2E16F01755003FE32C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		888F8F3016F01755003FE32C /* AuthKit-Example-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AuthKit-Example-Prefix.pch"; sourceTree = "<group>"; };
-		888F8F3116F01755003FE32C /* AKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AKAppDelegate.h; sourceTree = "<group>"; };
-		888F8F3216F01755003FE32C /* AKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AKAppDelegate.m; sourceTree = "<group>"; };
 		888F8F3416F01755003FE32C /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		888F8F3616F01755003FE32C /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		888F8F3816F01755003FE32C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		888F8F3A16F01755003FE32C /* AKLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AKLoginViewController.h; sourceTree = "<group>"; };
-		888F8F3B16F01755003FE32C /* AKLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AKLoginViewController.m; sourceTree = "<group>"; };
 		888F8F4516F01755003FE32C /* AuthKit-ExampleTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AuthKit-ExampleTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		888F8F4616F01755003FE32C /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		888F8F4E16F01755003FE32C /* AuthKit-ExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AuthKit-ExampleTests-Info.plist"; sourceTree = "<group>"; };
@@ -90,6 +90,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8850DFA516F02110003B70EC /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				8850DFA616F02110003B70EC /* Classes */,
+				8850DFAC16F02110003B70EC /* main.m */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		8850DFA616F02110003B70EC /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8850DFA716F02110003B70EC /* AKAppDelegate.h */,
+				8850DFA816F02110003B70EC /* AKAppDelegate.m */,
+				8850DFA916F02110003B70EC /* UI */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		8850DFA916F02110003B70EC /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				8850DFAA16F02110003B70EC /* AKLoginViewController.h */,
+				8850DFAB16F02110003B70EC /* AKLoginViewController.m */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		888F8F1616F01755003FE32C = {
 			isa = PBXGroup;
 			children = (
@@ -127,10 +155,7 @@
 		888F8F2816F01755003FE32C /* AuthKit-Example */ = {
 			isa = PBXGroup;
 			children = (
-				888F8F3116F01755003FE32C /* AKAppDelegate.h */,
-				888F8F3216F01755003FE32C /* AKAppDelegate.m */,
-				888F8F3A16F01755003FE32C /* AKLoginViewController.h */,
-				888F8F3B16F01755003FE32C /* AKLoginViewController.m */,
+				8850DFA516F02110003B70EC /* Source */,
 				888F8F2916F01755003FE32C /* Supporting Files */,
 			);
 			path = "AuthKit-Example";
@@ -141,7 +166,6 @@
 			children = (
 				888F8F2A16F01755003FE32C /* AuthKit-Example-Info.plist */,
 				888F8F2B16F01755003FE32C /* InfoPlist.strings */,
-				888F8F2E16F01755003FE32C /* main.m */,
 				888F8F3016F01755003FE32C /* AuthKit-Example-Prefix.pch */,
 				888F8F3416F01755003FE32C /* Default.png */,
 				888F8F3616F01755003FE32C /* Default@2x.png */,
@@ -309,9 +333,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				888F8F2F16F01755003FE32C /* main.m in Sources */,
-				888F8F3316F01755003FE32C /* AKAppDelegate.m in Sources */,
-				888F8F3C16F01755003FE32C /* AKLoginViewController.m in Sources */,
+				8850DFAD16F02110003B70EC /* AKAppDelegate.m in Sources */,
+				8850DFAE16F02110003B70EC /* AKLoginViewController.m in Sources */,
+				8850DFAF16F02110003B70EC /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
