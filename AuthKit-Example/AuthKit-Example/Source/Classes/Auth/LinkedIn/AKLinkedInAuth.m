@@ -24,7 +24,7 @@ static NSString * const kAKLinkedInClientSecret = @"GneNrlqv99QIZTTq";
 static NSString * const
     kAKLinkedInAuthorizationCodeRedirectURI = @"http://www.theiosengineer.com";
 
-static const int ddLogLevel = LOG_LEVEL_VERBOSE;
+static const int ddLogLevel = LOG_LEVEL_ERROR;
 
 @interface AKLinkedInAuth ()<AKOAuth2AuthorizationCodeConsumer>
 @property(nonatomic, strong)
@@ -59,9 +59,10 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
            andAuthorizationCodeConsumer:self];
   self.authorizationCodeWebViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
   AKAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
-  [appDelegate.window.rootViewController presentViewController:self.authorizationCodeWebViewController
-                                                      animated:YES
-                                                    completion:nil];   
+  [appDelegate.window.rootViewController
+      presentViewController:self.authorizationCodeWebViewController
+                   animated:YES
+                 completion:nil];   
 }
 
 - (void)closeSession {

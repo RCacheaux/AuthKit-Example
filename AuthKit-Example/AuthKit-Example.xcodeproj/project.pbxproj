@@ -16,6 +16,7 @@
 		8850DFC016F04253003B70EC /* AKLinkedInAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 8850DFBF16F04253003B70EC /* AKLinkedInAuth.m */; };
 		8850DFC316F051FC003B70EC /* AKOAuth2AuthorizationCodeWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8850DFC216F051FC003B70EC /* AKOAuth2AuthorizationCodeWebViewController.m */; };
 		8850DFD816F175BA003B70EC /* AKOAuth2AuthorizationCodeAuthorizationRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8850DFD716F175BA003B70EC /* AKOAuth2AuthorizationCodeAuthorizationRequest.m */; };
+		8850DFDC16F188DD003B70EC /* AKGoogleAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 8850DFDB16F188DD003B70EC /* AKGoogleAuth.m */; };
 		888F8F2316F01755003FE32C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 888F8F2216F01755003FE32C /* UIKit.framework */; };
 		888F8F2516F01755003FE32C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 888F8F2416F01755003FE32C /* Foundation.framework */; };
 		888F8F2716F01755003FE32C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 888F8F2616F01755003FE32C /* CoreGraphics.framework */; };
@@ -63,6 +64,8 @@
 		8850DFC216F051FC003B70EC /* AKOAuth2AuthorizationCodeWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKOAuth2AuthorizationCodeWebViewController.m; sourceTree = "<group>"; };
 		8850DFD616F175BA003B70EC /* AKOAuth2AuthorizationCodeAuthorizationRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKOAuth2AuthorizationCodeAuthorizationRequest.h; sourceTree = "<group>"; };
 		8850DFD716F175BA003B70EC /* AKOAuth2AuthorizationCodeAuthorizationRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKOAuth2AuthorizationCodeAuthorizationRequest.m; sourceTree = "<group>"; };
+		8850DFDA16F188DD003B70EC /* AKGoogleAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKGoogleAuth.h; sourceTree = "<group>"; };
+		8850DFDB16F188DD003B70EC /* AKGoogleAuth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKGoogleAuth.m; sourceTree = "<group>"; };
 		888F8F1F16F01755003FE32C /* AuthKit-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AuthKit-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		888F8F2216F01755003FE32C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		888F8F2416F01755003FE32C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -151,6 +154,7 @@
 		8850DFB716F036C9003B70EC /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				8850DFD916F18883003B70EC /* Google */,
 				9FB16FC916F1192E00676FC8 /* OAuth2 */,
 				8850DFB816F036C9003B70EC /* Facebook */,
 				8850DFBD16F0423C003B70EC /* LinkedIn */,
@@ -213,6 +217,15 @@
 			children = (
 			);
 			path = HTTP;
+			sourceTree = "<group>";
+		};
+		8850DFD916F18883003B70EC /* Google */ = {
+			isa = PBXGroup;
+			children = (
+				8850DFDA16F188DD003B70EC /* AKGoogleAuth.h */,
+				8850DFDB16F188DD003B70EC /* AKGoogleAuth.m */,
+			);
+			path = Google;
 			sourceTree = "<group>";
 		};
 		888F8F1616F01755003FE32C = {
@@ -448,6 +461,7 @@
 				8850DFC016F04253003B70EC /* AKLinkedInAuth.m in Sources */,
 				8850DFC316F051FC003B70EC /* AKOAuth2AuthorizationCodeWebViewController.m in Sources */,
 				8850DFD816F175BA003B70EC /* AKOAuth2AuthorizationCodeAuthorizationRequest.m in Sources */,
+				8850DFDC16F188DD003B70EC /* AKGoogleAuth.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
