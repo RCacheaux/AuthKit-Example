@@ -63,33 +63,25 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
   NSString *redirectURLHost = [[self.authorizationCodeRequest redirectURL] host];
 
   if ([requestURLHost isEqualToString:redirectURLHost]) {
-    DDLogVerbose(@"AKWebViewController: Redirect URL: %@", request.URL);
-    DDLogVerbose(@"AKWebViewController: Parameter String, %@",
-              [request.URL query]);
-    NSArray *queryParameters = [[request.URL query] componentsSeparatedByString:@"&"];
-    // TODO: Do not assume first element is the authorization code.
-    NSArray *authorizationCodeParameter =
-        [queryParameters[0] componentsSeparatedByString:@"="];
-    DDLogInfo(@"AKWebViewController: Authorization Code, %@",
-                 authorizationCodeParameter[1]);
-    
+    NSString *authorizationCode = [self authorizationCodeFromURL:request.URL];
     [self.authorizationCodeConsumer retriever:self
-                 didRetrieveAuthorizationCode:authorizationCodeParameter[1]];
+                 didRetrieveAuthorizationCode:authorizationCode];
     return NO;
   }
   return YES;
 }
 
-- (void)webViewDidStartLoad:(UIWebView *)webView {
-  
-}
-
-- (void)webViewDidFinishLoad:(UIWebView *)webView {
-  
-}
-
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
-  
+- (NSString *)authorizationCodeFromURL:(NSURL *)URL {
+  DDLogVerbose(@"AKWebViewController: Redirect URL: %@", URL);
+  DDLogVerbose(@"AKWebViewController: Parameter String, %@",
+               [URL query]);
+  NSArray *queryParameters = [[URL query] componentsSeparatedByString:@"&"];
+  // TODO: Do not assume first element is the authorization code.
+  NSArray *authorizationCodeParameter =
+  [queryParameters[0] componentsSeparatedByString:@"="];
+  DDLogInfo(@"AKWebViewController: Authorization Code, %@",
+            authorizationCodeParameter[1]);
+  return authorizationCodeParameter[1];
 }
 
 @end

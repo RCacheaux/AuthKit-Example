@@ -1,6 +1,7 @@
 #import "AKAuthenticatedViewController.h"
 
 #import "AKFacebookAuth.h"
+#import "AKLinkedInAuth.h"
 
 @interface AKAuthenticatedViewController ()
 
@@ -46,7 +47,7 @@
 }
 
 - (void)logout:(id)sender {
-  [[AKFacebookAuth sharedFacebookAuth] closeSession];
+  [[AKLinkedInAuth sharedLinkedInAuth] closeSession];
 }
 
 - (void)didReceiveMemoryWarning {

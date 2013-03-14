@@ -13,11 +13,24 @@
 typedef void (^AFOAuth2AuthenticationSuccess)(AFOAuthCredential *credential);
 typedef void (^AFOAuth2AuthenticationFailure)(NSError *error);
 
+static NSString * const kAKLinkedInURL = @"https://www.linkedin.com/";
+
+static NSString * const kAKLinkedInAuthorizationCodePath = @"/uas/oauth2/authorization";
+static NSString * const kAKLinkedInAccessTokenPath = @"/uas/oauth2/accessToken";
+
+static NSString * const kAKLinkedInClientID = @"5se92tdnfz61";
+static NSString * const kAKLinkedInClientSecret = @"GneNrlqv99QIZTTq";
+
+static NSString * const
+    kAKLinkedInAuthorizationCodeRedirectURI = @"http://www.theiosengineer.com";
+
 static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 @interface AKLinkedInAuth ()<AKOAuth2AuthorizationCodeConsumer>
 @property(nonatomic, strong)
     AKOAuth2AuthorizationCodeWebViewController *authorizationCodeWebViewController;
+@property(nonatomic, strong, readonly) NSURL *linkedInAuthServerBaseURL;
+@property(nonatomic, strong) AFOAuthCredential *OAuthCredential;
 @end
 
 @implementation AKLinkedInAuth
@@ -32,14 +45,12 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 }
 
 - (void)openSession {
-  NSURL *baseURL = [NSURL URLWithString:@"https://www.linkedin.com/"];
-  
   AKOAuth2AuthorizationCodeAuthorizationRequest *authorizationCodeRequest =
       [[AKOAuth2AuthorizationCodeAuthorizationRequest alloc]
-       initWithAuthorizationEndpointBaseURL:baseURL
-                      authorizationCodePath:@"/uas/oauth2/authorization"
-                                   ClientID:@"5se92tdnfz61"
-                                redirectURI:@"http://www.theiosengineer.com"
+       initWithAuthorizationEndpointBaseURL:self.linkedInAuthServerBaseURL
+                      authorizationCodePath:kAKLinkedInAuthorizationCodePath
+                                   ClientID:kAKLinkedInClientID
+                                redirectURI:kAKLinkedInAuthorizationCodeRedirectURI
                                       scope:@"r_basicprofile"];
   
   self.authorizationCodeWebViewController =
@@ -54,11 +65,15 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 }
 
 - (void)closeSession {
-  
+  self.OAuthCredential = nil;
+  [self.authenticationHandler userDidLogout:self];
 }
 
 - (BOOL)sessionIsOpen {
-  
+  if (self.OAuthCredential) {
+    return YES;
+  }
+  return NO;
 }
 
 #pragma mark AKOAuth2AuthorizationCodeConsumer 
@@ -66,32 +81,34 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 - (void)retriever:(id)retriever
     didRetrieveAuthorizationCode:(NSString *)authorizationCode {
   DDLogVerbose(@"AKLinkedInAuth: GOT AUTH CODE");
-  
-  NSURL *linkedInAuthServerBaseURL =
-      [NSURL URLWithString:@"https://www.linkedin.com/"];
   AFOAuth2Client *linkedInOAuth2Client =
-      [AFOAuth2Client clientWithBaseURL:linkedInAuthServerBaseURL
-                               clientID:@"5se92tdnfz61"
-                                 secret:@"GneNrlqv99QIZTTq"];
+      [AFOAuth2Client clientWithBaseURL:self.linkedInAuthServerBaseURL
+                               clientID:kAKLinkedInClientID
+                                 secret:kAKLinkedInClientSecret];
   AKLinkedInAuth __weak *weakSelf = self;
   AFOAuth2AuthenticationSuccess authenticationSuccess = ^(AFOAuthCredential *credential){
     DDLogVerbose(@"AKLinkedInAuth: Logged In to LinkedIn, %@", credential);
+    weakSelf.OAuthCredential = credential;
     [weakSelf.authenticationHandler userDidLogin:weakSelf];
+    [weakSelf.authorizationCodeWebViewController dismissViewControllerAnimated:YES
+                                                                    completion:nil];
+    
   };
   AFOAuth2AuthenticationFailure authenticationFailure = ^(NSError *error){
     DDLogError(@"AKLinkedInAuth: Failure authenticating, %@",
                [error localizedDescription]);
   };
+  [linkedInOAuth2Client
+      authenticateUsingOAuthWithPath:kAKLinkedInAccessTokenPath
+                                code:authorizationCode
+                         redirectURI:kAKLinkedInAuthorizationCodeRedirectURI
+                             success:authenticationSuccess
+                             failure:authenticationFailure];
   
-  [linkedInOAuth2Client authenticateUsingOAuthWithPath:@"/uas/oauth2/accessToken"
-                                                  code:authorizationCode
-                                           redirectURI:@"http://www.theiosengineer.com"
-                                               success:authenticationSuccess
-                                               failure:authenticationFailure];
-  
-  
-  [self.authorizationCodeWebViewController dismissViewControllerAnimated:YES
-                                                              completion:nil];
+}
+
+- (NSURL *)linkedInAuthServerBaseURL {
+  return [NSURL URLWithString:kAKLinkedInURL];
 }
 
 @end
