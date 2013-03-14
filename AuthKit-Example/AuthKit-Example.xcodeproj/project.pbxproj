@@ -154,8 +154,8 @@
 		8850DFB716F036C9003B70EC /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				8850DFD916F18883003B70EC /* Google */,
 				9FB16FC916F1192E00676FC8 /* OAuth2 */,
+				8850DFD916F18883003B70EC /* Google */,
 				8850DFB816F036C9003B70EC /* Facebook */,
 				8850DFBD16F0423C003B70EC /* LinkedIn */,
 			);
