@@ -14,7 +14,8 @@
 		8850DFB516F02311003B70EC /* AKApplicationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8850DFB416F02311003B70EC /* AKApplicationViewController.m */; };
 		8850DFBB16F036F1003B70EC /* AKFacebookAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 8850DFBA16F036F1003B70EC /* AKFacebookAuth.m */; };
 		8850DFC016F04253003B70EC /* AKLinkedInAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 8850DFBF16F04253003B70EC /* AKLinkedInAuth.m */; };
-		8850DFC316F051FC003B70EC /* AKWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8850DFC216F051FC003B70EC /* AKWebViewController.m */; };
+		8850DFC316F051FC003B70EC /* AKOAuth2AuthorizationCodeWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8850DFC216F051FC003B70EC /* AKOAuth2AuthorizationCodeWebViewController.m */; };
+		8850DFD816F175BA003B70EC /* AKOAuth2AuthorizationCodeAuthorizationRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8850DFD716F175BA003B70EC /* AKOAuth2AuthorizationCodeAuthorizationRequest.m */; };
 		888F8F2316F01755003FE32C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 888F8F2216F01755003FE32C /* UIKit.framework */; };
 		888F8F2516F01755003FE32C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 888F8F2416F01755003FE32C /* Foundation.framework */; };
 		888F8F2716F01755003FE32C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 888F8F2616F01755003FE32C /* CoreGraphics.framework */; };
@@ -44,8 +45,8 @@
 /* Begin PBXFileReference section */
 		1E9610579FDB4606B5E39100 /* Pods-AuthKit-ExampleTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuthKit-ExampleTests.xcconfig"; path = "Pods/Pods-AuthKit-ExampleTests.xcconfig"; sourceTree = SOURCE_ROOT; };
 		239D353398314934A3C709AF /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
-		8850DFA716F02110003B70EC /* AKAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKAppDelegate.h; sourceTree = "<group>"; };
-		8850DFA816F02110003B70EC /* AKAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKAppDelegate.m; sourceTree = "<group>"; };
+		8850DFA716F02110003B70EC /* AKAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AKAppDelegate.h; path = Classes/AKAppDelegate.h; sourceTree = "<group>"; };
+		8850DFA816F02110003B70EC /* AKAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AKAppDelegate.m; path = Classes/AKAppDelegate.m; sourceTree = "<group>"; };
 		8850DFAA16F02110003B70EC /* AKLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKLoginViewController.h; sourceTree = "<group>"; };
 		8850DFAB16F02110003B70EC /* AKLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKLoginViewController.m; sourceTree = "<group>"; };
 		8850DFAC16F02110003B70EC /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -53,13 +54,15 @@
 		8850DFB116F02141003B70EC /* AKAuthenticatedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKAuthenticatedViewController.m; sourceTree = "<group>"; };
 		8850DFB316F02311003B70EC /* AKApplicationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKApplicationViewController.h; sourceTree = "<group>"; };
 		8850DFB416F02311003B70EC /* AKApplicationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKApplicationViewController.m; sourceTree = "<group>"; };
-		8850DFB616F02D87003B70EC /* AKAuthenticationHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AKAuthenticationHandler.h; sourceTree = "<group>"; };
+		8850DFB616F02D87003B70EC /* AKAuthenticationHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AKAuthenticationHandler.h; path = Classes/AKAuthenticationHandler.h; sourceTree = "<group>"; };
 		8850DFB916F036F1003B70EC /* AKFacebookAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKFacebookAuth.h; sourceTree = "<group>"; };
 		8850DFBA16F036F1003B70EC /* AKFacebookAuth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKFacebookAuth.m; sourceTree = "<group>"; };
 		8850DFBE16F04253003B70EC /* AKLinkedInAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKLinkedInAuth.h; sourceTree = "<group>"; };
 		8850DFBF16F04253003B70EC /* AKLinkedInAuth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKLinkedInAuth.m; sourceTree = "<group>"; };
-		8850DFC116F051FC003B70EC /* AKWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKWebViewController.h; sourceTree = "<group>"; };
-		8850DFC216F051FC003B70EC /* AKWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKWebViewController.m; sourceTree = "<group>"; };
+		8850DFC116F051FC003B70EC /* AKOAuth2AuthorizationCodeWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKOAuth2AuthorizationCodeWebViewController.h; sourceTree = "<group>"; };
+		8850DFC216F051FC003B70EC /* AKOAuth2AuthorizationCodeWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKOAuth2AuthorizationCodeWebViewController.m; sourceTree = "<group>"; };
+		8850DFD616F175BA003B70EC /* AKOAuth2AuthorizationCodeAuthorizationRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKOAuth2AuthorizationCodeAuthorizationRequest.h; sourceTree = "<group>"; };
+		8850DFD716F175BA003B70EC /* AKOAuth2AuthorizationCodeAuthorizationRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKOAuth2AuthorizationCodeAuthorizationRequest.m; sourceTree = "<group>"; };
 		888F8F1F16F01755003FE32C /* AuthKit-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AuthKit-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		888F8F2216F01755003FE32C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		888F8F2416F01755003FE32C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -112,6 +115,9 @@
 			children = (
 				8850DFA616F02110003B70EC /* Classes */,
 				8850DFAC16F02110003B70EC /* main.m */,
+				8850DFA716F02110003B70EC /* AKAppDelegate.h */,
+				8850DFA816F02110003B70EC /* AKAppDelegate.m */,
+				8850DFB616F02D87003B70EC /* AKAuthenticationHandler.h */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -119,9 +125,8 @@
 		8850DFA616F02110003B70EC /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				8850DFA716F02110003B70EC /* AKAppDelegate.h */,
-				8850DFA816F02110003B70EC /* AKAppDelegate.m */,
-				8850DFB616F02D87003B70EC /* AKAuthenticationHandler.h */,
+				8850DFCD16F160CF003B70EC /* Network */,
+				8850DFC916F1406F003B70EC /* Additions */,
 				8850DFB716F036C9003B70EC /* Auth */,
 				8850DFA916F02110003B70EC /* UI */,
 			);
@@ -137,8 +142,8 @@
 				8850DFAB16F02110003B70EC /* AKLoginViewController.m */,
 				8850DFB016F02141003B70EC /* AKAuthenticatedViewController.h */,
 				8850DFB116F02141003B70EC /* AKAuthenticatedViewController.m */,
-				8850DFC116F051FC003B70EC /* AKWebViewController.h */,
-				8850DFC216F051FC003B70EC /* AKWebViewController.m */,
+				8850DFC116F051FC003B70EC /* AKOAuth2AuthorizationCodeWebViewController.h */,
+				8850DFC216F051FC003B70EC /* AKOAuth2AuthorizationCodeWebViewController.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -169,6 +174,45 @@
 				8850DFBF16F04253003B70EC /* AKLinkedInAuth.m */,
 			);
 			path = LinkedIn;
+			sourceTree = "<group>";
+		};
+		8850DFC416F13EAD003B70EC /* Grants */ = {
+			isa = PBXGroup;
+			children = (
+				8850DFC516F13EAD003B70EC /* AuthorizationCode */,
+			);
+			path = Grants;
+			sourceTree = "<group>";
+		};
+		8850DFC516F13EAD003B70EC /* AuthorizationCode */ = {
+			isa = PBXGroup;
+			children = (
+				8850DFD616F175BA003B70EC /* AKOAuth2AuthorizationCodeAuthorizationRequest.h */,
+				8850DFD716F175BA003B70EC /* AKOAuth2AuthorizationCodeAuthorizationRequest.m */,
+			);
+			path = AuthorizationCode;
+			sourceTree = "<group>";
+		};
+		8850DFC916F1406F003B70EC /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Additions;
+			sourceTree = "<group>";
+		};
+		8850DFCD16F160CF003B70EC /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				8850DFCE16F160CF003B70EC /* HTTP */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		8850DFCE16F160CF003B70EC /* HTTP */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HTTP;
 			sourceTree = "<group>";
 		};
 		888F8F1616F01755003FE32C = {
@@ -249,6 +293,7 @@
 		9FB16FC916F1192E00676FC8 /* OAuth2 */ = {
 			isa = PBXGroup;
 			children = (
+				8850DFC416F13EAD003B70EC /* Grants */,
 				9FB16FCA16F1195A00676FC8 /* AKOAuth2AuthorizationCodeConsumer.h */,
 			);
 			path = OAuth2;
@@ -401,7 +446,8 @@
 				8850DFB516F02311003B70EC /* AKApplicationViewController.m in Sources */,
 				8850DFBB16F036F1003B70EC /* AKFacebookAuth.m in Sources */,
 				8850DFC016F04253003B70EC /* AKLinkedInAuth.m in Sources */,
-				8850DFC316F051FC003B70EC /* AKWebViewController.m in Sources */,
+				8850DFC316F051FC003B70EC /* AKOAuth2AuthorizationCodeWebViewController.m in Sources */,
+				8850DFD816F175BA003B70EC /* AKOAuth2AuthorizationCodeAuthorizationRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,25 +1,29 @@
-#import "AKWebViewController.h"
+#import "AKOAuth2AuthorizationCodeWebViewController.h"
 
 #import <CocoaLumberjack/DDLog.h>
 
 #import "AKOAuth2AuthorizationCodeConsumer.h"
+#import "AKOAuth2AuthorizationCodeAuthorizationRequest.h"
 
 static const int ddLogLevel = LOG_LEVEL_INFO;
 
-@interface AKWebViewController ()<UIWebViewDelegate>
-@property(nonatomic, weak) id<AKOAuth2AuthorizationCodeConsumer> authorizationCodeConsumer;
-@property(nonatomic, strong) NSURL *webViewURL;
+@interface AKOAuth2AuthorizationCodeWebViewController ()<UIWebViewDelegate>
+@property(nonatomic, weak)
+    id<AKOAuth2AuthorizationCodeConsumer> authorizationCodeConsumer;
+@property(nonatomic, strong)
+    AKOAuth2AuthorizationCodeAuthorizationRequest *authorizationCodeRequest;
 @property(nonatomic, strong, readonly) UIWebView *webView;
 @end
 
-@implementation AKWebViewController
+@implementation AKOAuth2AuthorizationCodeWebViewController
 
-- (id)initWithWebViewURL:(NSURL *)webViewURL
-    andAuthorizationCodeConsumer:(id<AKOAuth2AuthorizationCodeConsumer>)consumer{
+- (id)initWithAuthorizationCodeRequest:
+    (AKOAuth2AuthorizationCodeAuthorizationRequest *)authorizationCodeRequest
+          andAuthorizationCodeConsumer:(id<AKOAuth2AuthorizationCodeConsumer>)consumer {
   self = [super init];
   if (self) {
     self.authorizationCodeConsumer = consumer;
-    self.webViewURL = webViewURL;
+    self.authorizationCodeRequest = authorizationCodeRequest;
   }
   return self;
 }
@@ -35,8 +39,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
-  NSURLRequest *webViewURLRequest = [NSURLRequest requestWithURL:self.webViewURL];
-  [self.webView loadRequest:webViewURLRequest];
+  [self.webView loadRequest:[self.authorizationCodeRequest authorizationRequest]];
 }
 
 - (UIWebView *)webView {
@@ -57,8 +60,9 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
                @"navigationType, %d", request, navigationType);
   DDLogVerbose(@"AKWebViewController: Host, %@", [request.URL host]);
   NSString *requestURLHost = [request.URL host];
-  // TODO: Add a property to this VC to identify the redirect host.
-  if ([requestURLHost isEqualToString:@"www.theiosengineer.com"]) {
+  NSString *redirectURLHost = [[self.authorizationCodeRequest redirectURL] host];
+
+  if ([requestURLHost isEqualToString:redirectURLHost]) {
     DDLogVerbose(@"AKWebViewController: Redirect URL: %@", request.URL);
     DDLogVerbose(@"AKWebViewController: Parameter String, %@",
               [request.URL query]);
