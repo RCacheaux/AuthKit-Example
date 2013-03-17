@@ -43,7 +43,7 @@ static const int ddLogLevel = LOG_LEVEL_ERROR;
 }
 
 - (void)login:(id)sender {
-  [[AKGoogleAuth sharedGoogleAuth] openSession];
+  [[AKFacebookAuth sharedFacebookAuth] openSession];
 }
 
 - (void)didReceiveMemoryWarning {
