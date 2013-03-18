@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		881EAF6D16F6861E0041AD55 /* AKUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 881EAF6C16F6861E0041AD55 /* AKUser.m */; };
+		881EAF6E16F6861E0041AD55 /* AKUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 881EAF6C16F6861E0041AD55 /* AKUser.m */; };
+		881EAF7116F6862C0041AD55 /* AKAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 881EAF7016F6862C0041AD55 /* AKAccount.m */; };
+		881EAF7216F6862C0041AD55 /* AKAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 881EAF7016F6862C0041AD55 /* AKAccount.m */; };
+		881EAF7516F686840041AD55 /* AKService.m in Sources */ = {isa = PBXBuildFile; fileRef = 881EAF7416F686840041AD55 /* AKService.m */; };
+		881EAF7616F686840041AD55 /* AKService.m in Sources */ = {isa = PBXBuildFile; fileRef = 881EAF7416F686840041AD55 /* AKService.m */; };
+		881EAF7916F6869D0041AD55 /* AKProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 881EAF7816F6869D0041AD55 /* AKProtocol.m */; };
+		881EAF7A16F6869D0041AD55 /* AKProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 881EAF7816F6869D0041AD55 /* AKProtocol.m */; };
+		881EAF7D16F686B20041AD55 /* AKEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 881EAF7C16F686B20041AD55 /* AKEngine.m */; };
+		881EAF7E16F686B20041AD55 /* AKEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 881EAF7C16F686B20041AD55 /* AKEngine.m */; };
+		881EAF8116F687CD0041AD55 /* AKData.m in Sources */ = {isa = PBXBuildFile; fileRef = 881EAF8016F687CD0041AD55 /* AKData.m */; };
+		881EAF8216F687CD0041AD55 /* AKData.m in Sources */ = {isa = PBXBuildFile; fileRef = 881EAF8016F687CD0041AD55 /* AKData.m */; };
+		881EAF8516F688170041AD55 /* AKSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 881EAF8416F688160041AD55 /* AKSession.m */; };
+		881EAF8616F688170041AD55 /* AKSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 881EAF8416F688160041AD55 /* AKSession.m */; };
 		8850DFAD16F02110003B70EC /* AKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8850DFA816F02110003B70EC /* AKAppDelegate.m */; };
 		8850DFAE16F02110003B70EC /* AKLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8850DFAB16F02110003B70EC /* AKLoginViewController.m */; };
 		8850DFAF16F02110003B70EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8850DFAC16F02110003B70EC /* main.m */; };
@@ -46,6 +60,20 @@
 /* Begin PBXFileReference section */
 		1E9610579FDB4606B5E39100 /* Pods-AuthKit-ExampleTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuthKit-ExampleTests.xcconfig"; path = "Pods/Pods-AuthKit-ExampleTests.xcconfig"; sourceTree = SOURCE_ROOT; };
 		239D353398314934A3C709AF /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		881EAF6B16F6861E0041AD55 /* AKUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKUser.h; sourceTree = "<group>"; };
+		881EAF6C16F6861E0041AD55 /* AKUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKUser.m; sourceTree = "<group>"; };
+		881EAF6F16F6862C0041AD55 /* AKAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKAccount.h; sourceTree = "<group>"; };
+		881EAF7016F6862C0041AD55 /* AKAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKAccount.m; sourceTree = "<group>"; };
+		881EAF7316F686840041AD55 /* AKService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKService.h; sourceTree = "<group>"; };
+		881EAF7416F686840041AD55 /* AKService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKService.m; sourceTree = "<group>"; };
+		881EAF7716F6869D0041AD55 /* AKProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKProtocol.h; sourceTree = "<group>"; };
+		881EAF7816F6869D0041AD55 /* AKProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKProtocol.m; sourceTree = "<group>"; };
+		881EAF7B16F686B20041AD55 /* AKEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKEngine.h; sourceTree = "<group>"; };
+		881EAF7C16F686B20041AD55 /* AKEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKEngine.m; sourceTree = "<group>"; };
+		881EAF7F16F687CD0041AD55 /* AKData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKData.h; sourceTree = "<group>"; };
+		881EAF8016F687CD0041AD55 /* AKData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKData.m; sourceTree = "<group>"; };
+		881EAF8316F688160041AD55 /* AKSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKSession.h; sourceTree = "<group>"; };
+		881EAF8416F688160041AD55 /* AKSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKSession.m; sourceTree = "<group>"; };
 		8850DFA716F02110003B70EC /* AKAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AKAppDelegate.h; path = Classes/AKAppDelegate.h; sourceTree = "<group>"; };
 		8850DFA816F02110003B70EC /* AKAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AKAppDelegate.m; path = Classes/AKAppDelegate.m; sourceTree = "<group>"; };
 		8850DFAA16F02110003B70EC /* AKLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKLoginViewController.h; sourceTree = "<group>"; };
@@ -113,6 +141,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		881EAF6A16F686060041AD55 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				881EAF6B16F6861E0041AD55 /* AKUser.h */,
+				881EAF6C16F6861E0041AD55 /* AKUser.m */,
+				881EAF6F16F6862C0041AD55 /* AKAccount.h */,
+				881EAF7016F6862C0041AD55 /* AKAccount.m */,
+				881EAF7316F686840041AD55 /* AKService.h */,
+				881EAF7416F686840041AD55 /* AKService.m */,
+				881EAF7716F6869D0041AD55 /* AKProtocol.h */,
+				881EAF7816F6869D0041AD55 /* AKProtocol.m */,
+				881EAF7B16F686B20041AD55 /* AKEngine.h */,
+				881EAF7C16F686B20041AD55 /* AKEngine.m */,
+				881EAF7F16F687CD0041AD55 /* AKData.h */,
+				881EAF8016F687CD0041AD55 /* AKData.m */,
+				881EAF8316F688160041AD55 /* AKSession.h */,
+				881EAF8416F688160041AD55 /* AKSession.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		8850DFA516F02110003B70EC /* Source */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +177,7 @@
 		8850DFA616F02110003B70EC /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				881EAF6A16F686060041AD55 /* Model */,
 				8850DFCD16F160CF003B70EC /* Network */,
 				8850DFC916F1406F003B70EC /* Additions */,
 				8850DFB716F036C9003B70EC /* Auth */,
@@ -462,6 +512,13 @@
 				8850DFC316F051FC003B70EC /* AKOAuth2AuthorizationCodeWebViewController.m in Sources */,
 				8850DFD816F175BA003B70EC /* AKOAuth2AuthorizationCodeAuthorizationRequest.m in Sources */,
 				8850DFDC16F188DD003B70EC /* AKGoogleAuth.m in Sources */,
+				881EAF6D16F6861E0041AD55 /* AKUser.m in Sources */,
+				881EAF7116F6862C0041AD55 /* AKAccount.m in Sources */,
+				881EAF7516F686840041AD55 /* AKService.m in Sources */,
+				881EAF7916F6869D0041AD55 /* AKProtocol.m in Sources */,
+				881EAF7D16F686B20041AD55 /* AKEngine.m in Sources */,
+				881EAF8116F687CD0041AD55 /* AKData.m in Sources */,
+				881EAF8516F688170041AD55 /* AKSession.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,6 +527,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				888F8F5416F01755003FE32C /* AuthKit_ExampleTests.m in Sources */,
+				881EAF6E16F6861E0041AD55 /* AKUser.m in Sources */,
+				881EAF7216F6862C0041AD55 /* AKAccount.m in Sources */,
+				881EAF7616F686840041AD55 /* AKService.m in Sources */,
+				881EAF7A16F6869D0041AD55 /* AKProtocol.m in Sources */,
+				881EAF7E16F686B20041AD55 /* AKEngine.m in Sources */,
+				881EAF8216F687CD0041AD55 /* AKData.m in Sources */,
+				881EAF8616F688170041AD55 /* AKSession.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
