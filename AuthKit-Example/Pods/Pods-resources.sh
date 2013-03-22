@@ -26,3 +26,4 @@ install_resource()
   esac
 }
 install_resource 'Facebook-iOS-SDK/src/FacebookSDKResources.bundle'
+install_resource 'gtm-oauth2/Source/Touch/GTMOAuth2ViewTouch.xib'

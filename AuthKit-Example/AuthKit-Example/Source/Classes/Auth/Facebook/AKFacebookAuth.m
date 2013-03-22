@@ -5,7 +5,7 @@
 
 #import "AKAuthenticationHandler.h"
 
-static const int ddLogLevel = LOG_LEVEL_ERROR;
+static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 @interface AKFacebookAuth ()
 
@@ -64,6 +64,7 @@ static const int ddLogLevel = LOG_LEVEL_ERROR;
       
     case FBSessionStateClosed:
     case FBSessionStateClosedLoginFailed:
+      DDLogVerbose(@"AKLoginViewController: Facebook session state closed.");
       [FBSession.activeSession closeAndClearTokenInformation];
       [self.authenticationHandler userDidLogout:self];
       break;

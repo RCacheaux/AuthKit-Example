@@ -1,6 +1,12 @@
 #import "AKAuthenticatedViewController.h"
 
+#import <CocoaLumberjack/DDLog.h>
+#import <FacebookSDK/FacebookSDK.h>
+
 #import "AKFacebookAuth.h"
+#import "AKLinkedInAuth.h"
+
+static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 @interface AKAuthenticatedViewController ()
 
@@ -25,6 +31,7 @@
   [super viewDidLoad];
   [self loadScreenIdentifier];
 	[self loadLogoutButton];
+  [self loadFacebookCallButton];
 }
 
 - (void)loadScreenIdentifier {
@@ -45,8 +52,33 @@
   [self.view addSubview:logoutButton];
 }
 
+- (void)loadFacebookCallButton {
+  UIButton *facebookCallButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+  [facebookCallButton addTarget:self
+                         action:@selector(facebookCall:)
+               forControlEvents:UIControlEventTouchUpInside];
+  [facebookCallButton setTitle:@"Facebook Call" forState:UIControlStateNormal];
+  facebookCallButton.frame = CGRectMake(60.0f, 100.0f, 200.0f, 50.0f);
+  [self.view addSubview:facebookCallButton];
+}
+
 - (void)logout:(id)sender {
   [[AKFacebookAuth sharedFacebookAuth] closeSession];
+}
+
+- (void)facebookCall:(id)sender {
+  FBRequestHandler requestHandler = ^(FBRequestConnection *connection,
+                                      id result,
+                                      NSError *error){
+    if (!error) {
+      DDLogVerbose(@"AKAuthenticatedViewController: Facebook Call Complete, %@.", result);
+    } else {
+      DDLogError(@"AKAuthenticatedViewController: Facebook Call Error, %@.", error);
+    }
+  };
+  if (FBSession.activeSession.isOpen) {
+    [[FBRequest requestForMe] startWithCompletionHandler:requestHandler];
+  }
 }
 
 - (void)didReceiveMemoryWarning {

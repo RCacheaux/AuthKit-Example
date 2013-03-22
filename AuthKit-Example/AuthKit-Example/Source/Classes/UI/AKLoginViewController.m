@@ -4,6 +4,7 @@
 
 #import "AKFacebookAuth.h"
 #import "AKLinkedInAuth.h"
+#import "AKGoogleAuth.h"
 
 static const int ddLogLevel = LOG_LEVEL_ERROR;
 
@@ -42,7 +43,7 @@ static const int ddLogLevel = LOG_LEVEL_ERROR;
 }
 
 - (void)login:(id)sender {
-  [[AKLinkedInAuth sharedLinkedInAuth] openSession];
+  [[AKFacebookAuth sharedFacebookAuth] openSession];
 }
 
 - (void)didReceiveMemoryWarning {

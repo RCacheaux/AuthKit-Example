@@ -8,7 +8,7 @@
 
 #import "AKApplicationViewController.h"
 
-static const int ddLogLevel = LOG_LEVEL_VERBOSE;
+static const int ddLogLevel = LOG_LEVEL_ERROR;
 
 @implementation AKAppDelegate
 
@@ -28,10 +28,9 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
             openURL:(NSURL *)url
     sourceApplication:(NSString *)sourceApplication
            annotation:(id)annotation {
-//  return [FBSession.activeSession handleOpenURL:url];
   DDLogVerbose(@"AKAppDelegate: Open URL, %@, source application, %@, annotation, %@",
                url, sourceApplication, annotation);
-  return YES;
+  return [FBSession.activeSession handleOpenURL:url];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
