@@ -4,7 +4,7 @@
 
 #import "AKOAuth2AuthorizationCodeConsumer.h"
 
-static const int ddLogLevel = LOG_LEVEL_INFO;
+static const int ddLogLevel = LOG_LEVEL_ERROR;
 
 @interface AKWebViewController ()<UIWebViewDelegate>
 @property(nonatomic, weak) id<AKOAuth2AuthorizationCodeConsumer> authorizationCodeConsumer;
