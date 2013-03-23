@@ -43,7 +43,7 @@ static const int ddLogLevel = LOG_LEVEL_ERROR;
 }
 
 - (void)login:(id)sender {
-  [[AKFacebookAuth sharedFacebookAuth] openSession];
+  [[AKLinkedInAuth sharedLinkedInAuth] openSession];
 }
 
 - (void)didReceiveMemoryWarning {
