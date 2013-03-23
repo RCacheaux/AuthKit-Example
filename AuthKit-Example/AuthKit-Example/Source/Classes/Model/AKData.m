@@ -1,10 +1,10 @@
 #import "AKData.h"
 
-#import "AKAccount.h"
+#import "Account.h"
 #import "AKEngine.h"
 #import "AKProtocol.h"
 #import "AKService.h"
-#import "AKUser.h"
+#import "User.h"
 
 @implementation AKData
 
