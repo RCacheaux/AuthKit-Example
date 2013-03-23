@@ -1,9 +1,12 @@
 #import <UIKit/UIKit.h>
 
+#import "AKKeychainItem.h"
+
 @interface AKKeychain : NSObject
 
-- (void)mySetObject:(id)inObject forKey:(id)key;
-- (id)myObjectForKey:(id)key;
-- (void)resetKeychainItem;
+// TODO(rcacheaux): Return error objects.
++ (AKKeychainItem *)createKeychainItem:(AKKeychainItem *)keychainItem;
++ (void)deleteKeychainItem:(AKKeychainItem *)keychainItem;
+// TODO(rcacheaux): Implement update method.
 
 @end

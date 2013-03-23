@@ -12,6 +12,32 @@ static NSString * const kKeychainItemID = @"com.rcach.authkit";
 
 @implementation AKKeychain
 
+// TODO(rcacheaux): Invalidate initializer.
+
++ (AKKeychainItem *)createKeychainItem:(AKKeychainItem *)keychainItem {
+  // TODO(rcacheaux): What if |keychainItem| has already been created?
+  
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //Synthesize the getter and setter:
 @synthesize keychainData, genericPasswordQuery;
 
@@ -71,8 +97,7 @@ static NSString * const kKeychainItemID = @"com.rcach.authkit";
 }
 
 // Implement the mySetObject:forKey method, which writes attributes to the keychain:
-- (void)mySetObject:(id)inObject forKey:(id)key
-{
+- (void)mySetObject:(id)inObject forKey:(id)key {
   if (inObject == nil) return;
   id currentObject = [keychainData objectForKey:key];
   if (![currentObject isEqual:inObject]) {
@@ -82,8 +107,7 @@ static NSString * const kKeychainItemID = @"com.rcach.authkit";
 }
 
 // Implement the myObjectForKey: method, which reads an attribute value from a dictionary:
-- (id)myObjectForKey:(id)key
-{
+- (id)myObjectForKey:(id)key {
   return [keychainData objectForKey:key];
 }
 
@@ -102,17 +126,26 @@ static NSString * const kKeychainItemID = @"com.rcach.authkit";
     // Delete the keychain item in preparation for resetting the values:
     // TODO(rcacheaux): Make sure using correct ARC bridging options.
     CFDictionaryRef tmpDictionaryRef = (__bridge CFDictionaryRef)tmpDictionary;
-    NSAssert(SecItemDelete(tmpDictionaryRef) == noErr, @"Problem deleting current keychain item." );
+    NSAssert(SecItemDelete(tmpDictionaryRef) == noErr,
+             @"Problem deleting current keychain item." );
   }
   
   // Default generic data for Keychain Item:
   // TODO(rcacheaux): Make sure using correct ARC bridging options.
-  [keychainData setObject:@"Item label" forKey:(__bridge id)kSecAttrLabel];
-  [keychainData setObject:@"Item description" forKey:(__bridge id)kSecAttrDescription];
-  [keychainData setObject:@"Account" forKey:(__bridge id)kSecAttrAccount];
-  [keychainData setObject:@"Service" forKey:(__bridge id)kSecAttrService];
-  [keychainData setObject:@"Your comment here." forKey:(__bridge id)kSecAttrComment];
-  [keychainData setObject:@"password" forKey:(__bridge id)kSecValueData];
+  NSDictionary *keychainItemDictionary =
+      @{ (__bridge id)kSecAttrLabel : @"Item label",
+         (__bridge id)kSecAttrDescription : @"Item description",
+         (__bridge id)kSecAttrAccount : @"Account",
+         (__bridge id)kSecAttrService : @"Service",
+         (__bridge id)kSecAttrComment : @"Your comment here.",
+         (__bridge id)kSecValueData : @"password",
+         (__bridge id)kSecAttrAccessible : (__bridge id)kSecAttrAccessibleWhenUnlocked };
+         // TODO(rcacheaux): Clients should have a say in kSecAttrAccessible.
+  
+  // TODO(rcacheaux): This breaks the original implementation, originally this method
+  // will NOT create a new dictionary and would just override all keys,objects.
+  self.keychainData = [keychainItemDictionary mutableCopy];
+  
 }
 
 // Implement the dictionaryToSecItemFormat: method, which takes the attributes that
@@ -124,18 +157,20 @@ static NSString * const kKeychainItemID = @"com.rcach.authkit";
   
   // Create the return dictionary:
   NSMutableDictionary *returnDictionary =
-  [NSMutableDictionary dictionaryWithDictionary:dictionaryToConvert];
+      [NSMutableDictionary dictionaryWithDictionary:dictionaryToConvert];
   
   // Add the keychain item class and the generic attribute:
   NSData *keychainItemID = [kKeychainItemID dataUsingEncoding:NSUTF8StringEncoding];
   
   // TODO(rcacheaux): Make sure using correct ARC bridging options.
   [returnDictionary setObject:keychainItemID forKey:(__bridge id)kSecAttrGeneric];
-  [returnDictionary setObject:(__bridge id)kSecClassGenericPassword forKey:(__bridge id)kSecClass];
+  [returnDictionary setObject:(__bridge id)kSecClassGenericPassword
+                       forKey:(__bridge id)kSecClass];
   
   // Convert the password NSString to NSData to fit the API paradigm:
   // TODO(rcacheaux): Make sure using correct ARC bridging options.
-  NSString *passwordString = [dictionaryToConvert objectForKey:(__bridge id)kSecValueData];
+  NSString *passwordString =
+      [dictionaryToConvert objectForKey:(__bridge id)kSecValueData];
   [returnDictionary setObject:[passwordString dataUsingEncoding:NSUTF8StringEncoding]
                        forKey:(__bridge id)kSecValueData];
   return returnDictionary;
@@ -156,7 +191,8 @@ static NSString * const kKeychainItemID = @"com.rcach.authkit";
   // first add the search key and class attribute required to obtain the password:
   // TODO(rcacheaux): Make sure using correct ARC bridging options.
   [returnDictionary setObject:(id)kCFBooleanTrue forKey:(__bridge id)kSecReturnData];
-  [returnDictionary setObject:(__bridge id)kSecClassGenericPassword forKey:(__bridge id)kSecClass];
+  [returnDictionary setObject:(__bridge id)kSecClassGenericPassword
+                       forKey:(__bridge id)kSecClass];
   // Then call Keychain Services to get the password:
   // TODO(rcacheaux): Make sure using correct ARC bridging options.
   CFDataRef passwordDataRef;
@@ -174,7 +210,8 @@ static NSString * const kKeychainItemID = @"com.rcach.authkit";
     // TODO(rcacheaux): Make sure using correct ARC bridging options.
     NSString *password =
         [[NSString alloc] initWithBytes:[passwordData bytes]
-                                 length:[passwordData length] encoding:NSUTF8StringEncoding];
+                                 length:[passwordData length]
+                               encoding:NSUTF8StringEncoding];
     [returnDictionary setObject:password forKey:(__bridge id)kSecValueData];
   }
   // Don't do anything if nothing is found.
@@ -201,8 +238,9 @@ static NSString * const kKeychainItemID = @"com.rcach.authkit";
   
   CFDictionaryRef resultDictionary;
   // TODO(rcacheaux): Make sure using correct ARC bridging options.
-  OSStatus returnCode = SecItemCopyMatching((__bridge CFDictionaryRef)genericPasswordQuery,
-                                            (CFTypeRef *)&resultDictionary);
+  OSStatus returnCode =
+      SecItemCopyMatching((__bridge CFDictionaryRef)genericPasswordQuery,
+                          (CFTypeRef *)&resultDictionary);
   // If the keychain item already exists, modify it:
   if (returnCode == noErr) {
     // First, get the attributes returned from the keychain and add them to the
@@ -236,7 +274,8 @@ static NSString * const kKeychainItemID = @"com.rcach.authkit";
     // TODO(rcacheaux): Make sure using correct ARC bridging options.
     CFDictionaryRef newItemDictionaryRef =
         (__bridge CFDictionaryRef)[self dictionaryToSecItemFormat:keychainData];
-    NSAssert(SecItemAdd(newItemDictionaryRef, NULL) == noErr, @"Couldn't add the Keychain Item." );
+    NSAssert(SecItemAdd(newItemDictionaryRef, NULL) == noErr,
+             @"Couldn't add the Keychain Item." );
   }
 }
 

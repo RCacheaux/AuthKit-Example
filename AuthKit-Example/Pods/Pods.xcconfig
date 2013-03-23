@@ -1,7 +1,7 @@
 ALWAYS_SEARCH_USER_PATHS = YES
 HEADER_SEARCH_PATHS = ${PODS_HEADERS_SEARCH_PATHS}
 OTHER_LDFLAGS = -ObjC -lsqlite3.0 -framework CoreLocation -framework MobileCoreServices -framework Security -framework SystemConfiguration -weak_framework Accounts -weak_framework AdSupport -weak_framework Social
-PODS_BUILD_HEADERS_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/AFNetworking" "${PODS_ROOT}/BuildHeaders/AFOAuth2Client" "${PODS_ROOT}/BuildHeaders/CocoaLumberjack" "${PODS_ROOT}/BuildHeaders/Facebook-iOS-SDK" "${PODS_ROOT}/BuildHeaders/Facebook-iOS-SDK/FacebookSDK" "${PODS_ROOT}/BuildHeaders/gtm-oauth2" "${PODS_ROOT}/BuildHeaders/OCMock"
+PODS_BUILD_HEADERS_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/AFNetworking" "${PODS_ROOT}/BuildHeaders/AFOAuth2Client" "${PODS_ROOT}/BuildHeaders/CocoaLumberjack" "${PODS_ROOT}/BuildHeaders/Facebook-iOS-SDK" "${PODS_ROOT}/BuildHeaders/Facebook-iOS-SDK/FacebookSDK" "${PODS_ROOT}/BuildHeaders/GTMHTTPFetcher" "${PODS_ROOT}/BuildHeaders/gtm-oauth2" "${PODS_ROOT}/BuildHeaders/OCMock"
 PODS_HEADERS_SEARCH_PATHS = ${PODS_PUBLIC_HEADERS_SEARCH_PATHS}
-PODS_PUBLIC_HEADERS_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/AFNetworking" "${PODS_ROOT}/Headers/AFOAuth2Client" "${PODS_ROOT}/Headers/CocoaLumberjack" "${PODS_ROOT}/Headers/Facebook-iOS-SDK" "${PODS_ROOT}/Headers/Facebook-iOS-SDK/FacebookSDK" "${PODS_ROOT}/Headers/gtm-oauth2" "${PODS_ROOT}/Headers/OCMock"
+PODS_PUBLIC_HEADERS_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/AFNetworking" "${PODS_ROOT}/Headers/AFOAuth2Client" "${PODS_ROOT}/Headers/CocoaLumberjack" "${PODS_ROOT}/Headers/Facebook-iOS-SDK" "${PODS_ROOT}/Headers/Facebook-iOS-SDK/FacebookSDK" "${PODS_ROOT}/Headers/GTMHTTPFetcher" "${PODS_ROOT}/Headers/gtm-oauth2" "${PODS_ROOT}/Headers/OCMock"
 PODS_ROOT = ${SRCROOT}/Pods

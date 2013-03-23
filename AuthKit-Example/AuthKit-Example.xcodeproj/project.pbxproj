@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		880870FE16FD622200D09848 /* AKKeychainItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 880870FD16FD622200D09848 /* AKKeychainItem.m */; };
+		8808710116FD63DF00D09848 /* AKPasswordKeychainItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8808710016FD63DF00D09848 /* AKPasswordKeychainItem.m */; };
+		8808710416FD6BD700D09848 /* AKGenericPasswordKeychainItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8808710316FD6BD700D09848 /* AKGenericPasswordKeychainItem.m */; };
+		8808710716FD6C5100D09848 /* AKInternetPasswordKeychainItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8808710616FD6C5100D09848 /* AKInternetPasswordKeychainItem.m */; };
 		881EAF6D16F6861E0041AD55 /* AKUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 881EAF6C16F6861E0041AD55 /* AKUser.m */; };
 		881EAF6E16F6861E0041AD55 /* AKUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 881EAF6C16F6861E0041AD55 /* AKUser.m */; };
 		881EAF7116F6862C0041AD55 /* AKAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 881EAF7016F6862C0041AD55 /* AKAccount.m */; };
@@ -62,6 +66,14 @@
 /* Begin PBXFileReference section */
 		1E9610579FDB4606B5E39100 /* Pods-AuthKit-ExampleTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuthKit-ExampleTests.xcconfig"; path = "Pods/Pods-AuthKit-ExampleTests.xcconfig"; sourceTree = SOURCE_ROOT; };
 		239D353398314934A3C709AF /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		880870FC16FD622200D09848 /* AKKeychainItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKKeychainItem.h; sourceTree = "<group>"; };
+		880870FD16FD622200D09848 /* AKKeychainItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKKeychainItem.m; sourceTree = "<group>"; };
+		880870FF16FD63DF00D09848 /* AKPasswordKeychainItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKPasswordKeychainItem.h; sourceTree = "<group>"; };
+		8808710016FD63DF00D09848 /* AKPasswordKeychainItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKPasswordKeychainItem.m; sourceTree = "<group>"; };
+		8808710216FD6BD700D09848 /* AKGenericPasswordKeychainItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKGenericPasswordKeychainItem.h; sourceTree = "<group>"; };
+		8808710316FD6BD700D09848 /* AKGenericPasswordKeychainItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKGenericPasswordKeychainItem.m; sourceTree = "<group>"; };
+		8808710516FD6C5100D09848 /* AKInternetPasswordKeychainItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKInternetPasswordKeychainItem.h; sourceTree = "<group>"; };
+		8808710616FD6C5100D09848 /* AKInternetPasswordKeychainItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKInternetPasswordKeychainItem.m; sourceTree = "<group>"; };
 		881EAF6B16F6861E0041AD55 /* AKUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKUser.h; sourceTree = "<group>"; };
 		881EAF6C16F6861E0041AD55 /* AKUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKUser.m; sourceTree = "<group>"; };
 		881EAF6F16F6862C0041AD55 /* AKAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKAccount.h; sourceTree = "<group>"; };
@@ -366,6 +378,14 @@
 			children = (
 				9F6454F016FCF99800FAA6DD /* AKKeychain.h */,
 				9F6454F116FCF99800FAA6DD /* AKKeychain.m */,
+				880870FC16FD622200D09848 /* AKKeychainItem.h */,
+				880870FD16FD622200D09848 /* AKKeychainItem.m */,
+				880870FF16FD63DF00D09848 /* AKPasswordKeychainItem.h */,
+				8808710016FD63DF00D09848 /* AKPasswordKeychainItem.m */,
+				8808710216FD6BD700D09848 /* AKGenericPasswordKeychainItem.h */,
+				8808710316FD6BD700D09848 /* AKGenericPasswordKeychainItem.m */,
+				8808710516FD6C5100D09848 /* AKInternetPasswordKeychainItem.h */,
+				8808710616FD6C5100D09848 /* AKInternetPasswordKeychainItem.m */,
 			);
 			path = Keychain;
 			sourceTree = "<group>";
@@ -537,6 +557,10 @@
 				881EAF8116F687CD0041AD55 /* AKData.m in Sources */,
 				881EAF8516F688170041AD55 /* AKSession.m in Sources */,
 				9F6454F216FCF99800FAA6DD /* AKKeychain.m in Sources */,
+				880870FE16FD622200D09848 /* AKKeychainItem.m in Sources */,
+				8808710116FD63DF00D09848 /* AKPasswordKeychainItem.m in Sources */,
+				8808710416FD6BD700D09848 /* AKGenericPasswordKeychainItem.m in Sources */,
+				8808710716FD6C5100D09848 /* AKInternetPasswordKeychainItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
